@@ -16,7 +16,7 @@ class AppiumConfig():
                 "noReset": True
 
             }
-            self.driver = webdriver.Remote(command_executor=f"http://localhost:{json_dic['port']}/wd/hub",
+            self.driver = webdriver.Remote(command_executor=f"http://localhost:4723/wd/hub",
                                            desired_capabilities=des_cap)
         else:
             des_cap = {
@@ -33,8 +33,8 @@ class AppiumConfig():
                 }
             }
 
-        self.driver = webdriver.Remote(command_executor="http://hub.browserstack.com/wd/hub",
-                                       desired_capabilities=des_cap)
+            self.driver = webdriver.Remote(command_executor="http://hub.browserstack.com/wd/hub",
+                                           desired_capabilities=des_cap)
         self.driver.implicitly_wait(15)
         yield
         self.driver.quit()
