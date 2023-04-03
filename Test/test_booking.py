@@ -29,7 +29,6 @@ class TestBookingApp(AppiumConfig):
         # click on "Direct flights only" and click on search
         action.tap(x=983, y=1445).perform()
         action.tap(x=545, y=1300).perform()
-        time.sleep(10)
         print(self.driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'UiSelector().textContains("results")').text)
 
     def test_attractions(self):

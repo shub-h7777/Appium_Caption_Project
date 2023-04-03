@@ -16,7 +16,8 @@ class AppiumConfig():
                 "noReset": True
 
             }
-            self.driver = webdriver.Remote(command_executor=f"http://localhost:4723/wd/hub",
+            print(json_dic['port'])
+            self.driver = webdriver.Remote(command_executor=f"http://localhost:{json_dic['port']}/wd/hub",
                                            desired_capabilities=des_cap)
         else:
             des_cap = {
